@@ -87,6 +87,11 @@ void detectCollision() {
     tryAgain();
   }
   
+  ///if the box is outside the screen///
+  if (boxX - 0.5*boxSize < 0 || boxX + 0.5*boxSize > width) {
+    tryAgain();
+  }
+  
   ///if the box is given a size of zero///
   if (boxSize <= 0){
     tryAgain();

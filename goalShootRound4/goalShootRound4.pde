@@ -21,7 +21,7 @@ void setup() {
   size(300, 600);
   textSize(48);
   textAlign(CENTER);
-  
+
   boxY = 400;
   gapY = 200;
   gapWidth = 30;
@@ -31,7 +31,7 @@ void setup() {
 
 
 void draw() {
-  
+
   background(200); 
   noStroke();
 
@@ -51,7 +51,7 @@ void draw() {
   rectMode(CENTER);
   fill(boxColor);
   rect(boxX, boxY, boxSize, boxSize);
-  
+
   detectCollision();
 }
 
@@ -82,9 +82,14 @@ void detectCollision() {
   if (boxY + 0.5*boxSize >= height) {
     tryAgain();
   }
-  
+
+  ///if the box is outside the screen///
+  if (boxX - 0.5*boxSize < 0 || boxX + 0.5*boxSize > width) {
+    tryAgain();
+  }
+
   ///if the box is given a size of zero///
-  if (boxSize <= 0){
+  if (boxSize <= 0) {
     tryAgain();
   }
 }

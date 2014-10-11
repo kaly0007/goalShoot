@@ -1,7 +1,7 @@
 ///the following values can be changed without causing big problems...///
 
 float boxSize = 60;
-float boxX = 120;
+float boxX = 0;
 float boxY;
 
 float gapWidth;
@@ -79,6 +79,11 @@ void detectCollision() {
 
   ///if the box reaches the bottom of the screen///
   if (boxY + 0.5*boxSize >= height) {
+    tryAgain();
+  }
+  
+  ///if the box is outside the screen///
+  if (boxX - 0.5*boxSize < 0 || boxX + 0.5*boxSize > width) {
     tryAgain();
   }
 }
