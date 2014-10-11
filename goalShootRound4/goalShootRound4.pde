@@ -1,7 +1,7 @@
 ///the following values can be changed without causing big problems...///
 
-float boxSize = 60;
-float boxX = 120;
+float boxSize = 50;
+float boxX = 70;
 float boxY;
 
 float gapWidth;
@@ -9,8 +9,9 @@ float gapX = 150;
 float gapY;
 
 
+
 float goalWidth;
-float goalX = 150;
+float goalX = 200;
 float goalY;
 
 color boxColor = color(255, 0, 0);
@@ -21,11 +22,11 @@ void setup() {
   textSize(48);
   textAlign(CENTER);
   
-  boxY = 40;
+  boxY = 400;
   gapY = 200;
   gapWidth = 30;
-  goalY = height - 25;
-  goalWidth = 150;
+  goalY = 25;
+  goalWidth = 70;
 }
 
 
@@ -79,6 +80,11 @@ void detectCollision() {
 
   ///if the box reaches the bottom of the screen///
   if (boxY + 0.5*boxSize >= height) {
+    tryAgain();
+  }
+  
+  ///if the box is given a size of zero///
+  if (boxSize <= 0){
     tryAgain();
   }
 }

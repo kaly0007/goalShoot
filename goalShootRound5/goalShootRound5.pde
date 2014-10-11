@@ -1,12 +1,13 @@
 ///the following values can be changed without causing big problems...///
 
-float boxSize = 60;
-float boxX = 120;
+float boxSize = 50;
+float boxX = 150;
 float boxY;
 
 float gapWidth;
 float gapX = 150;
 float gapY;
+
 
 
 float goalWidth;
@@ -23,9 +24,9 @@ void setup() {
   
   boxY = 40;
   gapY = 200;
-  gapWidth = 30;
+  gapWidth = 200;
   goalY = height - 25;
-  goalWidth = 150;
+  goalWidth = 300;
 }
 
 
@@ -46,7 +47,7 @@ void draw() {
   rect(goalX, goalY, goalWidth, 20);
 
   ///Draw the falling box///
-  boxY = boxY + 3;
+  boxY = boxY + 0;
   rectMode(CENTER);
   fill(boxColor);
   rect(boxX, boxY, boxSize, boxSize);
@@ -79,6 +80,11 @@ void detectCollision() {
 
   ///if the box reaches the bottom of the screen///
   if (boxY + 0.5*boxSize >= height) {
+    tryAgain();
+  }
+  
+  ///if the box is given a size of zero///
+  if (boxSize <= 0){
     tryAgain();
   }
 }

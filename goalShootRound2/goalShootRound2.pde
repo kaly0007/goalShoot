@@ -1,16 +1,17 @@
 ///the following values can be changed without causing big problems...///
 
-float boxSize = 60;
-float boxX = 120;
+float boxSize = 30;
+float boxX = 250;
 float boxY;
 
 float gapWidth;
-float gapX = 150;
+float gapX = 100;
 float gapY;
 
 
+
 float goalWidth;
-float goalX = 150;
+float goalX = 250;
 float goalY;
 
 color boxColor = color(255, 0, 0);
@@ -23,9 +24,9 @@ void setup() {
   
   boxY = 40;
   gapY = 200;
-  gapWidth = 30;
+  gapWidth = 80;
   goalY = height - 25;
-  goalWidth = 150;
+  goalWidth = 70;
 }
 
 
