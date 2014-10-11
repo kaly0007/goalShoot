@@ -36,6 +36,10 @@ void draw() {
   noStroke();
 
   ///Draw the sides of the gap///
+  gapWidth = gapWidth - 4;
+  if(gapWidth < 0){
+    gapWidth = 0;
+  }
   rectMode(CORNER);
   fill(255, 255, 0);
   rect(0, gapY, gapX - 0.5*gapWidth, 100);
@@ -47,7 +51,7 @@ void draw() {
   rect(goalX, goalY, goalWidth, 20);
 
   ///Draw the falling box///
-  boxY = boxY + 0;
+  boxY = boxY + 3;
   rectMode(CENTER);
   fill(boxColor);
   rect(boxX, boxY, boxSize, boxSize);
