@@ -1,7 +1,7 @@
 ///the following values can be changed without causing big problems...///
 
 float boxSize = 60;
-float boxX = 0;
+float boxX = 80;
 float boxY;
 
 float gapWidth;
